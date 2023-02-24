@@ -15,13 +15,6 @@ val Typography = Typography(
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp
     ),
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.SansSerif,
-        fontWeight = FontWeight.Bold,
-        fontSize = 26.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
         /*
     labelSmall = TextStyle(
         fontFamily = FontFamily.Default,
@@ -33,10 +26,18 @@ val Typography = Typography(
     */
 )
 
+val itemTextStyle = TextStyle(
+    fontFamily = FontFamily.SansSerif,
+    fontWeight = FontWeight.Bold,
+    fontSize = 24.sp,
+    lineHeight = 28.sp,
+    letterSpacing = 0.sp
+)
+
 val moneyAmountStyle = TextStyle(
     fontFamily = FontFamily.SansSerif,
     fontWeight = FontWeight.Black,
-    fontSize = 42.sp,
+    fontSize = 56.sp,
     lineHeight = 28.sp,
     letterSpacing = 0.sp
 )

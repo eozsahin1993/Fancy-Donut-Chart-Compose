@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.donutchart.misc.toMoneyFormat
 import com.example.donutchart.ui.theme.Typography
+import com.example.donutchart.ui.theme.itemTextStyle
 import com.example.donutchart.ui.theme.moneyAmountStyle
 import com.example.donutchart.viewData
 import kotlin.math.pow
@@ -163,7 +164,7 @@ fun SelectionView(
 
     Column(Modifier.width(chartSize * 0.7f), horizontalAlignment = Alignment.CenterHorizontally) {
         Text("$${amount.toMoneyFormat(true)}", style = moneyAmountStyle, color = Color(0xFF37474f))
-        Text(text, style = Typography.titleLarge, color = Color(0xFF455a64))
+        Text(text, style = itemTextStyle, color = Color(0xFF455a64))
     }
 }
 
