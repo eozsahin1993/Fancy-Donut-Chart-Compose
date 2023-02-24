@@ -131,7 +131,6 @@ fun DonutChart(
             onDraw = {
                 center = this.center
                 anglesList.clear()
-                // Head
                 var lastAngle = 0f
                 data.items.forEachIndexed { ind, item ->
                     val sweepAngle = data.findSweepAngle(ind, gapPercentage)
