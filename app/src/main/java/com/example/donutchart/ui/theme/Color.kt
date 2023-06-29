@@ -16,3 +16,6 @@ val MetallicYellow = Color(0xFFFFCE08)
 val VividOrange = Color(0xFFFD5F00)
 val Sapphire = Color(0xFF1259b8)
 val RobingEggBlue = Color(0xFF0fd4C4)
+
+val PetroleumGray = Color(0xFF37474f)
+val PetroleumLightGray = Color(0xFF455a64)

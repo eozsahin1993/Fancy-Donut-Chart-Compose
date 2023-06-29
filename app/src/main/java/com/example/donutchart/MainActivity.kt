@@ -1,17 +1,17 @@
 package com.example.donutchart
 
 import android.os.Bundle
-import android.provider.MediaStore.Video
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.animation.*
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.donutchart.misc.toMoneyFormat
 import com.example.donutchart.ui.theme.*
 import com.example.donutchart.ui.theme.components.DonutChart
 import com.example.donutchart.ui.theme.components.DonutChartData
@@ -27,7 +27,6 @@ val viewData = DonutChartDataCollection(
         )
     )
 
-
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,14 +38,33 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalAnimationApi::class)
 @Composable
 fun Content() {
     Scaffold(
         topBar = {
-            LargeTopAppBar(title = { Text("Fancy Donut Chart Example") })
+            Text("Fancy Donut Chart",
+                style = Typography.displaySmall,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(20.dp))
         }
     ) { paddingValues ->
-        DonutChart(Modifier.padding(paddingValues), data = viewData)
+        DonutChart(Modifier.padding(paddingValues), data = viewData) { selected ->
+            AnimatedContent(targetState = selected) {
+                val amount = it?.amount ?: viewData.totalAmount
+                val text = it?.title ?: "Total"
+
+                Column(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text("$${amount.toMoneyFormat(true)}",
+                        style = moneyAmountStyle, color = PetroleumGray)
+                    Text(text, style = itemTextStyle, color = PetroleumLightGray)
+                }
+            }
+        }
     }
 }
