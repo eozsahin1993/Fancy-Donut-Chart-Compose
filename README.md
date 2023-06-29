@@ -6,5 +6,5 @@
 - Fully customizable! 
 
 
-https://github.com/eozsahin1993/Fancy-Donut-Chart-Compose/assets/53009568/b93fbc35-444c-477d-9ccc-92cf93b3a537
+https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXN6Z3ljbXdndWdwZXpzMWR4YWhpMHM1aTZ0dnNheW1tNzZlcXl5aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LOTnYdx5uSrSTYPDYs/giphy.gif
 
