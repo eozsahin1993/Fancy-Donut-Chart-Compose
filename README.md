@@ -6,5 +6,5 @@
 - Fully customizable! 
 
 
-https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXN6Z3ljbXdndWdwZXpzMWR4YWhpMHM1aTZ0dnNheW1tNzZlcXl5aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LOTnYdx5uSrSTYPDYs/giphy.gif
+![Fancy Donut Char](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXN6Z3ljbXdndWdwZXpzMWR4YWhpMHM1aTZ0dnNheW1tNzZlcXl5aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LOTnYdx5uSrSTYPDYs/giphy.gif)
 
