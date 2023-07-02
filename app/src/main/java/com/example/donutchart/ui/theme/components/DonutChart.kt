@@ -222,17 +222,29 @@ private fun calculateTouchAngleInDegrees(canvasCenter: Offset, normalizedPoint: 
  */
 private fun adjustAngleToCanvas(angle: Double) = (angle + TOTAL_ANGLE) % TOTAL_ANGLE
 
+/**
+ * Calculate the gap width between the arcs based on [gapPercentage]. The percentage is applied
+ * to the average count to determine the width in pixels.
+ */
 private fun DonutChartDataCollection.calculateGap(gapPercentage: Float): Float {
     if (this.items.isEmpty()) return 0f
 
     return (this.totalAmount / this.items.size) * gapPercentage
 }
 
+/**
+ * Returns the total data points including the individual gap widths indicated by the
+ * [gapPercentage].
+ */
 private fun DonutChartDataCollection.getTotalAmountWithGapIncluded(gapPercentage: Float): Float {
     val gap = this.calculateGap(gapPercentage)
     return this.totalAmount + (this.items.size * gap)
 }
 
+/**
+ * Calculate the sweep angle of an arc including the gap as well. The gap is derived based
+ * on [gapPercentage].
+ */
 private fun DonutChartDataCollection.calculateGapAngle(gapPercentage: Float): Float {
     val gap = this.calculateGap(gapPercentage)
     val totalAmountWithGap = this.getTotalAmountWithGapIncluded(gapPercentage)
@@ -240,6 +252,10 @@ private fun DonutChartDataCollection.calculateGapAngle(gapPercentage: Float): Fl
     return (gap / totalAmountWithGap) * TOTAL_ANGLE
 }
 
+/**
+ * Returns the sweep angle of a given point in the [DonutChartDataCollection]. This calculations
+ * takes the gap between arcs into the account.
+ */
 private fun DonutChartDataCollection.findSweepAngle(
     index: Int,
     gapPercentage: Float
